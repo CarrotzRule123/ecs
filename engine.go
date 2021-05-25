@@ -1,5 +1,7 @@
 package ecs
 
+import "time"
+
 const (
 	StateEngineContinue = 0
 	StateEngineStop     = 1
@@ -11,6 +13,7 @@ const (
 type engine struct {
 	entityManager *EntityManager
 	systemManager *SystemManager
+	lastUpdate    time.Time
 }
 
 // NewEngine creates a new Engine and returns its address.
@@ -23,11 +26,17 @@ func NewEngine(entityManager *EntityManager, systemManager *SystemManager) *engi
 
 // Run calls the Process() method for each System
 // until ShouldEngineStop is set to true.
-func (e *engine) Run() {
+func (e *engine) Run(tick int) {
 	shouldStop := false
-	for !shouldStop {
+	ticker := time.NewTicker(time.Second / time.Duration(tick))
+
+	for range ticker.C {
+		if shouldStop { break }
+
+		timeStamp := time.Now()
+		dt := float32(timeStamp.Sub(e.lastUpdate) / time.Second)
 		for _, system := range e.systemManager.Systems() {
-			state := system.Process(e.entityManager)
+			state := system.Process(e.entityManager, dt)
 			if state == StateEngineStop {
 				shouldStop = true
 				break

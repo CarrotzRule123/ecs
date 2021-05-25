@@ -34,7 +34,7 @@ func TestRunAsMain(t *testing.T) {
 
 type mockupChangeOneEntitySystem struct{}
 
-func (s *mockupChangeOneEntitySystem) Process(em *ecs.EntityManager) (state int) {
+func (s *mockupChangeOneEntitySystem) Process(em *ecs.EntityManager, dt float32) (state int) {
 	e := em.Get("foo")
 	e.Get(1).(*mockComponent).name = "bar"
 	return ecs.StateEngineStop
