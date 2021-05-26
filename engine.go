@@ -49,7 +49,7 @@ func (e *engine) Run(tick int) {
 // and initializes ShouldEngineStop and ShouldEnginePause with false.
 func (e *engine) Setup() {
 	for _, sys := range e.systemManager.Systems() {
-		sys.Setup()
+		sys.Setup(e.entityManager)
 	}
 }
 

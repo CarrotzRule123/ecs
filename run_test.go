@@ -39,5 +39,5 @@ func (s *mockupChangeOneEntitySystem) Process(em *ecs.EntityManager, dt float32)
 	e.Get(1).(*mockComponent).name = "bar"
 	return ecs.StateEngineStop
 }
-func (s *mockupChangeOneEntitySystem) Setup()    {}
+func (s *mockupChangeOneEntitySystem) Setup(entityManager *ecs.EntityManager)    {}
 func (s *mockupChangeOneEntitySystem) Teardown() {}

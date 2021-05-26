@@ -67,7 +67,7 @@ func (s *mockupUseAllEntitiesSystem) Process(entityManager *ecs.EntityManager, d
 	}
 	return ecs.StateEngineContinue
 }
-func (s *mockupUseAllEntitiesSystem) Setup() {
+func (s *mockupUseAllEntitiesSystem) Setup(entityManager *ecs.EntityManager) {
 }
 func (s *mockupUseAllEntitiesSystem) Teardown() {
 }
@@ -80,7 +80,7 @@ func (s *mockupShouldStopSystem) Process(entityManager *ecs.EntityManager, dt fl
 	}
 	return ecs.StateEngineStop
 }
-func (s *mockupShouldStopSystem) Setup() {
+func (s *mockupShouldStopSystem) Setup(entityManager *ecs.EntityManager) {
 }
 func (s *mockupShouldStopSystem) Teardown() {
 }

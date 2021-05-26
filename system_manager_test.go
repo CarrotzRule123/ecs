@@ -40,5 +40,5 @@ type mockupDedicatedSystem struct{}
 func (s *mockupDedicatedSystem) Process(entityManager *ecs.EntityManager, dt float32) (state int) {
 	return ecs.StateEngineContinue
 }
-func (s *mockupDedicatedSystem) Setup()    {}
+func (s *mockupDedicatedSystem) Setup(entityManager *ecs.EntityManager)    {}
 func (s *mockupDedicatedSystem) Teardown() {}
