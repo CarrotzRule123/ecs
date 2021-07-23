@@ -3,7 +3,7 @@ package ecs_test
 import (
 	"testing"
 
-	"github.com/CarrotzRule/ecs"
+	"github.com/CarrotzRule123/ecs"
 	"github.com/andygeiss/assert"
 )
 
@@ -41,5 +41,5 @@ type mockupDedicatedSystem struct{}
 func (s *mockupDedicatedSystem) Process(entityManager *ecs.EntityManager, dt float32) (state int) {
 	return ecs.StateEngineContinue
 }
-func (s *mockupDedicatedSystem) Setup(entityManager *ecs.EntityManager)    {}
-func (s *mockupDedicatedSystem) Teardown() {}
+func (s *mockupDedicatedSystem) Setup(entityManager *ecs.EntityManager) {}
+func (s *mockupDedicatedSystem) Teardown()                              {}

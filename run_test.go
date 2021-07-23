@@ -3,7 +3,7 @@ package ecs_test
 import (
 	"testing"
 
-	"github.com/CarrotzRule/ecs"
+	"github.com/CarrotzRule123/ecs"
 	"github.com/andygeiss/assert"
 )
 
@@ -40,5 +40,5 @@ func (s *mockupChangeOneEntitySystem) Process(em *ecs.EntityManager, dt float32)
 	e.Get(1).(*mockComponent).name = "bar"
 	return ecs.StateEngineStop
 }
-func (s *mockupChangeOneEntitySystem) Setup(entityManager *ecs.EntityManager)    {}
-func (s *mockupChangeOneEntitySystem) Teardown() {}
+func (s *mockupChangeOneEntitySystem) Setup(entityManager *ecs.EntityManager) {}
+func (s *mockupChangeOneEntitySystem) Teardown()                              {}

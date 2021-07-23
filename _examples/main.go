@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/CarrotzRule/ecs"
-	"github.com/CarrotzRule/ecs/_examples/engine"
-	"github.com/CarrotzRule/ecs/_examples/plugins"
+	"github.com/CarrotzRule123/ecs"
+	"github.com/CarrotzRule123/ecs/_examples/engine"
+	"github.com/CarrotzRule123/ecs/_examples/plugins"
 )
 
 const (

@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/CarrotzRule/ecs"
+	"github.com/CarrotzRule123/ecs"
 )
 
 func BenchmarkEngine_Run(b *testing.B) {

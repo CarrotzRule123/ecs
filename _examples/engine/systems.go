@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"github.com/CarrotzRule/ecs"
+	"github.com/CarrotzRule123/ecs"
 	"github.com/veandco/go-sdl2/sdl"
 )
 

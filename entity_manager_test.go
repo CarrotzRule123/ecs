@@ -3,7 +3,7 @@ package ecs_test
 import (
 	"testing"
 
-	"github.com/CarrotzRule/ecs"
+	"github.com/CarrotzRule123/ecs"
 	"github.com/andygeiss/assert"
 )
 

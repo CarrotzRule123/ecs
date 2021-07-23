@@ -5,8 +5,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/CarrotzRule/ecs"
-	"github.com/CarrotzRule/ecs/_examples/engine"
+	"github.com/CarrotzRule123/ecs"
+	"github.com/CarrotzRule123/ecs/_examples/engine"
 	tm "github.com/buger/goterm"
 )
 
