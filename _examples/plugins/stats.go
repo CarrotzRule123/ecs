@@ -2,11 +2,12 @@ package plugins
 
 import (
 	"fmt"
-	"github.com/andygeiss/ecs"
-	"github.com/andygeiss/ecs/_examples/engine"
-	tm "github.com/buger/goterm"
 	"runtime"
 	"time"
+
+	"github.com/CarrotzRule/ecs"
+	"github.com/CarrotzRule/ecs/_examples/engine"
+	tm "github.com/buger/goterm"
 )
 
 // ShowEngineStats ...

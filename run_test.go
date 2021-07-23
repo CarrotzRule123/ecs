@@ -1,9 +1,10 @@
 package ecs_test
 
 import (
-	"github.com/andygeiss/assert"
-	"github.com/andygeiss/ecs"
 	"testing"
+
+	"github.com/CarrotzRule/ecs"
+	"github.com/andygeiss/assert"
 )
 
 func TestRun(t *testing.T) {

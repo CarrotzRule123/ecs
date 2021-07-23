@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/andygeiss/ecs"
-	"github.com/andygeiss/ecs/_examples/engine"
-	"github.com/andygeiss/ecs/_examples/plugins"
 	"math/rand"
+
+	"github.com/CarrotzRule/ecs"
+	"github.com/CarrotzRule/ecs/_examples/engine"
+	"github.com/CarrotzRule/ecs/_examples/plugins"
 )
 
 const (

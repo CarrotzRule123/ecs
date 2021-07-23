@@ -1,4 +1,4 @@
-module github.com/andygeiss/ecs
+module github.com/CarrotzRule/ecs
 
 go 1.14
 

@@ -2,9 +2,10 @@ package ecs_test
 
 import (
 	"fmt"
-	"github.com/andygeiss/ecs"
 	"math/rand"
 	"testing"
+
+	"github.com/CarrotzRule/ecs"
 )
 
 func BenchmarkEngine_Run(b *testing.B) {
