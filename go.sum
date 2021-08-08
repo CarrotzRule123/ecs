@@ -1,4 +1,2 @@
 github.com/andygeiss/assert v0.0.9 h1:ZITUqQiyeBo7hXROIb50vKV2jeSAy/R9CD9UkxxS3w4=
 github.com/andygeiss/assert v0.0.9/go.mod h1:fCwXr8GkRVuJWDwiCS73+NTcHXyhQSx4uqV/0Fl5T3g=
-github.com/andygeiss/ecs v0.0.69 h1:yJEiS0I1iK5wodBhj6tnunGeE5lLfwlDaLDN7y3OzHw=
-github.com/andygeiss/ecs v0.0.69/go.mod h1:KG02Zz0oranMDsD/itrLWXyQ0pBg2G6hOmQWe7iz4u0=

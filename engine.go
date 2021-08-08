@@ -2,6 +2,7 @@ package ecs
 
 import "time"
 
+
 const (
 	StateEngineContinue = 0
 	StateEngineStop     = 1
@@ -31,10 +32,13 @@ func (e *engine) Run(tick int) {
 	ticker := time.NewTicker(time.Second / time.Duration(tick))
 
 	for range ticker.C {
-		if shouldStop { break }
+		if shouldStop {
+			break
+		}
 
 		timeStamp := time.Now()
-		dt := float32(timeStamp.Sub(e.lastUpdate) / time.Second)
+		dt := float64(timeStamp.Sub(e.lastUpdate).Milliseconds()) / 1000
+		e.lastUpdate = timeStamp
 		for _, system := range e.systemManager.Systems() {
 			state := system.Process(e.entityManager, dt)
 			if state == StateEngineStop {

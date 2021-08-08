@@ -63,7 +63,7 @@ func generateUseAllEntitiesSystems(count int) []ecs.System {
 // mockupUseAllEntitiesSystem works on all entities from the EntityManager which represents the worst-case scenario for performance.
 type mockupUseAllEntitiesSystem struct{}
 
-func (s *mockupUseAllEntitiesSystem) Process(entityManager *ecs.EntityManager, dt float32) (state int) {
+func (s *mockupUseAllEntitiesSystem) Process(entityManager *ecs.EntityManager, dt float64) (state int) {
 	for range entityManager.FilterByMask(1) {
 	}
 	return ecs.StateEngineContinue
@@ -76,7 +76,7 @@ func (s *mockupUseAllEntitiesSystem) Teardown() {
 // mockupShouldStopSystem is the last System in the queue and should stop the engine.
 type mockupShouldStopSystem struct{}
 
-func (s *mockupShouldStopSystem) Process(entityManager *ecs.EntityManager, dt float32) (state int) {
+func (s *mockupShouldStopSystem) Process(entityManager *ecs.EntityManager, dt float64) (state int) {
 	for range entityManager.FilterByMask(1) {
 	}
 	return ecs.StateEngineStop

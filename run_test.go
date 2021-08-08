@@ -14,7 +14,7 @@ func TestRun(t *testing.T) {
 	em.Add(entity)
 	sm := ecs.NewSystemManager()
 	sm.Add(&mockupChangeOneEntitySystem{})
-	ecs.Run(em, sm)
+	ecs.Run(em, sm, 30)
 	assert.That("run should change name to bar", t, component.name, "bar")
 }
 
@@ -27,7 +27,7 @@ func TestRunAsMain(t *testing.T) {
 	sm.Add(&mockupChangeOneEntitySystem{})
 	ecs.Main(func() {
 		ecs.Do(func() {
-			ecs.Run(em, sm)
+			ecs.Run(em, sm, 30)
 		})
 	})
 	assert.That("run should change name to bar", t, component.name, "bar")
@@ -35,7 +35,7 @@ func TestRunAsMain(t *testing.T) {
 
 type mockupChangeOneEntitySystem struct{}
 
-func (s *mockupChangeOneEntitySystem) Process(em *ecs.EntityManager, dt float32) (state int) {
+func (s *mockupChangeOneEntitySystem) Process(em *ecs.EntityManager, dt float64) (state int) {
 	e := em.Get("foo")
 	e.Get(1).(*mockComponent).name = "bar"
 	return ecs.StateEngineStop
