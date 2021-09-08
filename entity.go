@@ -25,6 +25,11 @@ func (e *Entity) Add(cn ...Component) {
 	}
 }
 
+// Check if entity has a component.
+func (e *Entity) Has(mask uint64) bool {
+	return e.Masked&mask == mask
+}
+
 // Get a component by its bitmask.
 func (e *Entity) Get(mask uint64) Component {
 	for _, c := range e.Components {
