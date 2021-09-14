@@ -11,15 +11,15 @@ const (
 
 // engine is simple a composition of an EntityManager and a SystemManager.
 // It handles the stages Setup(), Run() and Teardown() for all the systems.
-type engine struct {
+type Engine struct {
 	entityManager *EntityManager
 	systemManager *SystemManager
 	lastUpdate    time.Time
 }
 
 // NewEngine creates a new Engine and returns its address.
-func NewEngine(entityManager *EntityManager, systemManager *SystemManager) *engine {
-	return &engine{
+func NewEngine(entityManager *EntityManager, systemManager *SystemManager) *Engine {
+	return &Engine{
 		entityManager: entityManager,
 		systemManager: systemManager,
 	}
@@ -27,7 +27,7 @@ func NewEngine(entityManager *EntityManager, systemManager *SystemManager) *engi
 
 // Run calls the Process() method for each System
 // until ShouldEngineStop is set to true.
-func (e *engine) Run(tick int) {
+func (e *Engine) Run(tick int) {
 	shouldStop := false
 	ticker := time.NewTicker(time.Second / time.Duration(tick))
 
@@ -51,14 +51,14 @@ func (e *engine) Run(tick int) {
 
 // Setup calls the Setup() method for each System
 // and initializes ShouldEngineStop and ShouldEnginePause with false.
-func (e *engine) Setup() {
+func (e *Engine) Setup() {
 	for _, sys := range e.systemManager.Systems() {
 		sys.Setup(e.entityManager)
 	}
 }
 
 // Teardown calls the Teardown() method for each System.
-func (e *engine) Teardown() {
+func (e *Engine) Teardown() {
 	for _, sys := range e.systemManager.Systems() {
 		sys.Teardown()
 	}
